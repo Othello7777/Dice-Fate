@@ -12,7 +12,7 @@ const PuzzleBox = (props) => {
 			<div className='puzzleBox'>
 				<div className='nameTalent'>
 					<div style={{ color: "black" }} className='shadowText'>
-						{name}: {value}
+						{name}<div>{value}</div>
 					</div>
 				</div>
 			</div>

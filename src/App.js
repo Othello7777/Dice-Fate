@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import { Attribute, Header, Reset, attrsState } from "./compoments";
 
-const lpMax = 56;
+const lpMax = 0;
 
 const App = () => {
 	const [attrs, setAttrs] = useState(attrsState);
@@ -22,6 +22,7 @@ const App = () => {
 
 	const reset = (attrs) => {
 		attrs.forEach((attr) => (attr.value = rollDices()));
+		setLpPlayers(0);
 	};
 
 	const deleteDice = (id) => {
@@ -45,11 +46,11 @@ const App = () => {
 					<div className='puzzleFlex'>
 						<div className='puzzleBox'>
 							<div style={{ color: "black" }} className='shadowText'>
-								Punkty nauki: {lpPlayers}
+								Wykonane rzuty: {lpPlayers}
 							</div>
 						</div>
 						<Reset text={"Reset"} handleClick={() => reset(attrs)} />
-						<Reset text={"dodaj kość"} handleClick={() => addDice(attrs)} />
+						{/* <Reset text={"dodaj kość"} handleClick={() => addDice(attrs)} /> */}
 					</div>
 					{attrs.map((value, index) => (
 						<Attribute

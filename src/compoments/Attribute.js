@@ -1,10 +1,8 @@
 import React from "react";
 import PuzzleBox from "./PuzzleBox";
 
-const ctrlInc = 5;
-
 const Attribute = (props) => {
-	const { index, attrs, setAttrs, lpPlayers } = props;
+	const { index, attrs, setAttrs, lpPlayers, setLpPlayers } = props;
 	const attr = attrs[index];
 
 	function handleClick() {
@@ -24,6 +22,7 @@ const Attribute = (props) => {
 			clonedAttrs[index].value = "+";
 		}
 		setAttrs(clonedAttrs);
+		setLpPlayers(lpPlayers + 1);
 	};
 
 	return (
