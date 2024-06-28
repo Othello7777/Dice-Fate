@@ -1,0 +1,271 @@
+.App {
+	text-align: center;
+	background-color: #323338;
+	/* background-color: #f5e5ba; */
+	padding-bottom: 2000px;
+}
+
+.App-logo {
+	height: 40vmin;
+	pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.App-logo {
+		animation: App-logo-spin infinite 20s linear;
+	}
+}
+
+header {
+	background-color: #cc9705;
+	margin: auto -16px;
+	padding: 16px 32px;
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.9);
+}
+
+header h1 {
+	color: #fff;
+	font-family: "McLaren", cursive;
+	text-align: left;
+	padding-left: 40px;
+	font-weight: 200;
+}
+
+footer {
+	position: absolute;
+	text-align: center;
+	bottom: 0;
+	width: 100%;
+	height: 2.5rem;
+}
+
+footer h1 {
+	color: rgb(168, 152, 152);
+	padding-left: 40px;
+	font-weight: 600;
+	font-size: 2rem;
+}
+
+.shadowText {
+	font-weight: 900;
+	font-size: 1.3em;
+	color: rgb(255, 255, 255);
+	margin: 5px 0px;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	border: none;
+}
+
+.visualBox {
+	background-color: #202127;
+	color: rgb(255, 255, 255);
+	border-radius: 7px;
+	border-style: groove;
+	border-width: 4px;
+	border-color: #b48803;
+	min-width: 400px;
+	padding: 15px;
+	width: 500px;
+	margin: auto 64px auto auto;
+	float: center;
+	text-align: center;
+}
+
+.redBox {
+	display: flex;
+	float: center;
+	text-align: center;
+	align-items: center;
+	max-width: 3000px;
+}
+
+.blueBox {
+	display: flex;
+	float: center;
+	text-align: center;
+	align-items: center;
+	max-width: 3000px;
+}
+
+.puzzleFlex {
+	display: flex;
+	float: center;
+	text-align: center;
+	align-items: center;
+}
+
+.puzzleBox {
+	background-color: #b48803;
+	border-radius: 7px;
+	box-shadow: 0 2px 5px #ccc;
+	padding: 10px;
+	width: 240px;
+	margin: 16px 20px 16px auto;
+	display: flex;
+	float: right;
+	text-align: center;
+}
+
+.valuePrint {
+	margin-top: 10px;
+	display: center;
+	float: center;
+	font-weight: 900;
+	font-size: 1.3em;
+}
+
+.valueBox {
+	background-color: #fff;
+	border: none;
+	height: 48px;
+	width: 60px;
+	margin: auto;
+	border-radius: 7px;
+	box-shadow: 0 2px 5px #ccc;
+}
+
+.descriptionText {
+	width: 90px;
+}
+
+.stressBoxPress {
+	background-color: #000000;
+	color: rgb(255, 255, 255);
+	border: none;
+	height: 48px;
+	width: 48px;
+	margin: 16px 16px 16px 16px;
+	border-radius: 7px;
+	box-shadow: 0 2px 5px #ccc;
+}
+
+.stressBox {
+	background-color: #ffffff;
+	border: none;
+	height: 48px;
+	width: 48px;
+	margin: 16px 16px 16px 16px;
+	border-radius: 7px;
+	box-shadow: 0 2px 5px #ccc;
+}
+
+.stressBox:hover {
+	transition-duration: 0.4s;
+	background-color: #e1d790;
+	color: white;
+}
+
+.healthBoxPress {
+	background-color: #b90000;
+	color: white;
+	border: none;
+	height: 48px;
+	width: 48px;
+	margin: 16px 16px 16px auto;
+	border-radius: 7px;
+	box-shadow: 0 2px 5px #ccc;
+}
+
+.healthBox {
+	background-color: #fff;
+	border: none;
+	height: 48px;
+	width: 48px;
+	margin: 16px 16px 16px auto;
+	border-radius: 7px;
+	box-shadow: 0 2px 5px #ccc;
+}
+
+.healthBox:hover {
+	transition-duration: 0.4s;
+	background-color: #920707;
+	color: white;
+}
+
+.buttonSkill {
+	background-color: #b48803;
+	border: none;
+	height: 48px;
+	width: 48px;
+	margin: auto;
+	border-radius: 7px;
+	box-shadow: 0 2px 5px #ccc;
+}
+
+.buttonSkill:hover {
+	background-color: #ffbf00;
+}
+
+.buttonSkill:active {
+	background-color: #b48803;
+}
+
+.nameTalent {
+	margin: auto;
+}
+
+.colorSkill {
+	background-color: #323338;
+	border: none;
+	height: 48px;
+	width: 48px;
+	margin: auto 0 auto 0;
+	border-radius: 7px;
+	box-shadow: 0 2px 5px #ccc;
+	float: inline-end;
+}
+
+.colorBoxSkill {
+	border-style: dashed;
+	height: 48px;
+	width: 48px;
+	margin: auto 0 auto 0;
+	border-radius: 7px;
+	box-shadow: 0 2px 5px #ccc;
+	float: inline-end;
+}
+
+.puzzleValue {
+	display: flex;
+}
+
+.mainPuzzleBox {
+	display: flex;
+}
+
+@keyframes App-logo-spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+/* * * * * * * Mobile * * * * * * */
+
+@media (max-width: 2600px) {
+	.App {
+		background-color: #323338;
+	}
+
+	.visualBox {
+		display: inline-block;
+		margin: 16px;
+	}
+
+	.redBox {
+		display: inline-block;
+		margin: auto;
+		max-width: 2000px;
+		text-align: center;
+		align-items: center;
+	}
+
+	.blueBox {
+		display: inline-block;
+		max-width: 2500px;
+		text-align: center;
+		align-items: center;
+	}
+}
