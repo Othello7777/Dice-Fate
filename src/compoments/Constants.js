@@ -1,5 +1,5 @@
 const valueBar = (name, valueHP, valueSP) => ({ name, valueHP, valueSP });
-const attr = (name, color) => ({ name, value: 3, color });
+const attr = (name) => ({ name, value: "o" });
 const tree = (name, talents) => ({ name, talents });
 const talent = (name, value) => ({ name, value: 0 });
 
@@ -11,11 +11,10 @@ export const valueBarsState = [
 ];
 
 export const attrsState = [
-	attr("Siła", "orange"),
-	attr("Zręczność", "green"),
-	attr("Umysł", "blue"),
-	attr("Zmysł", "purple"),
-	attr("Witalność", "red"),
+	attr("1# Kość"),
+	attr("2# Kość"),
+	attr("3# Kość"),
+	attr("4# Kość"),
 ];
 
 export const treesState = [

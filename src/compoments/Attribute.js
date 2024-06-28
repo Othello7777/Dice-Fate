@@ -4,48 +4,34 @@ import PuzzleBox from "./PuzzleBox";
 const ctrlInc = 5;
 
 const Attribute = (props) => {
-	const { index, attrs, setAttrs, lpPlayers, setLpPlayers } = props;
+	const { index, attrs, setAttrs, lpPlayers } = props;
 	const attr = attrs[index];
+
+	function handleClick() {
+		props.onDelete(props.id);
+	}
 
 	const incValue = (e) => {
 		const clonedAttrs = [...attrs];
-		if (e.ctrlKey) {
-			if (lpPlayers > ctrlInc - 1) {
-				clonedAttrs[index].value += ctrlInc;
-				setAttrs(clonedAttrs);
-				setLpPlayers(lpPlayers - ctrlInc);
-			}
+
+		const value = Math.floor(Math.random() * 3);
+
+		if (value === 0) {
+			clonedAttrs[index].value = "-";
+		} else if (value === 1) {
+			clonedAttrs[index].value = "o";
 		} else {
-			if (lpPlayers > 0) {
-				clonedAttrs[index].value++;
-				setAttrs(clonedAttrs);
-				setLpPlayers(lpPlayers - 1);
-			}
+			clonedAttrs[index].value = "+";
 		}
+		setAttrs(clonedAttrs);
 	};
 
-	const decValue = (e) => {
-		const clonedAttrs = [...attrs];
-		if (e.ctrlKey) {
-			if (attr.value > ctrlInc - 1) {
-				clonedAttrs[index].value -= ctrlInc;
-				setAttrs(clonedAttrs);
-				setLpPlayers(lpPlayers + ctrlInc);
-			}
-		} else {
-			if (attr.value > 0) {
-				clonedAttrs[index].value--;
-				setAttrs(clonedAttrs);
-				setLpPlayers(lpPlayers + 1);
-			}
-		}
-	};
 	return (
 		<PuzzleBox
 			name={attr.name}
 			value={attr.value}
 			incValue={incValue}
-			decValue={decValue}
+			onDelete={handleClick}
 			hasColorBox={true}
 			color={attr.color}
 		/>

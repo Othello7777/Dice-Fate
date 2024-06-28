@@ -1,16 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
-import {
-	Attribute,
-	CharacterTree,
-	DescriptionPlayer,
-	Header,
-	HealthBar,
-	Reset,
-	valueBarsState,
-	attrsState,
-	treesState,
-} from "./compoments";
+import { Attribute, Header, Reset, attrsState } from "./compoments";
 
 const lpMax = 56;
 
@@ -18,9 +8,28 @@ const App = () => {
 	const [attrs, setAttrs] = useState(attrsState);
 	const [lpPlayers, setLpPlayers] = useState(lpMax);
 
-	const reset = (attrs, setLpPlayers, lpMax) => {
-		attrs.forEach((attr) => (attr.value = 3));
-		setLpPlayers(lpMax);
+	function rollDices() {
+		const value = Math.floor(Math.random() * 3);
+
+		if (value === 0) {
+			return "-";
+		} else if (value === 1) {
+			return "o";
+		} else {
+			return "+";
+		}
+	}
+
+	const reset = (attrs) => {
+		attrs.forEach((attr) => (attr.value = rollDices()));
+	};
+
+	const deleteDice = (id) => {
+		setAttrs((prevDices) => {
+			return prevDices.filter((diceItem, index) => {
+				return index !== id;
+			});
+		});
 	};
 
 	const addDice = (attrs) => {
@@ -39,10 +48,7 @@ const App = () => {
 								Punkty nauki: {lpPlayers}
 							</div>
 						</div>
-						<Reset
-							text={"Reset"}
-							handleClick={() => reset(attrs, setLpPlayers, lpMax)}
-						/>
+						<Reset text={"Reset"} handleClick={() => reset(attrs)} />
 						<Reset text={"dodaj kość"} handleClick={() => addDice(attrs)} />
 					</div>
 					{attrs.map((value, index) => (
@@ -52,6 +58,7 @@ const App = () => {
 							setAttrs={setAttrs}
 							lpPlayers={lpPlayers}
 							setLpPlayers={setLpPlayers}
+							onDelete={deleteDice}
 						/>
 					))}
 				</div>
